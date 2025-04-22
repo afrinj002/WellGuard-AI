@@ -34,6 +34,12 @@ const Navbar = ({ currentPage, setCurrentPage }) => (
       >
         HR Dashboard
       </button>
+      <button
+        className={currentPage === 'settings' ? 'active' : ''}
+        onClick={() => setCurrentPage('settings')}
+      >
+        Settings
+      </button>
     </div>
   </div>
 );

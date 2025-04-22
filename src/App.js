@@ -6,6 +6,7 @@ import Signup from './components/Signup';
 import EmployeeDashboard from './components/EmployeeDashboard';
 import HRDashboard from './components/HRDashboard';
 import Consent from './components/Consent';
+import Settings from './components/Settings';
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -24,6 +25,8 @@ const App = () => {
         return <EmployeeDashboard />;
       case 'hr':
         return <HRDashboard />;
+      case 'settings':
+        return <Settings/>;
       default:
         return <Home setCurrentPage={setCurrentPage} />;
     }
