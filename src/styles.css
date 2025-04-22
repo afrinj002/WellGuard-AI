@@ -1,0 +1,346 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f2f5;
+    color: #333;
+  }
+  
+  /* Sidebar Navigation */
+  .sidebar {
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(135deg, #4b5bd9, #8e44ad);
+    position: fixed;
+    padding: 2rem 1rem;
+    color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .sidebar-menu button {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    background: none;
+    border: none;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .sidebar-menu button:hover,
+  .sidebar-menu button.active {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Main Content */
+  .main-content {
+    margin-left: 260px; /* Increased to account for sidebar padding */
+    padding: 2rem;
+    min-height: 100vh;
+    width: calc(100% - 260px); /* Adjusted width to prevent overlap */
+  }
+  
+  /* Home Page Styles */
+  .home {
+    text-align: center;
+  }
+  
+  .home-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #4b5bd9;
+    margin-bottom: 1rem;
+  }
+  
+  .home-description {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .home-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Increased min width */
+    gap: 2rem; /* Increased gap for better spacing */
+    justify-content: center;
+    padding: 0 1rem; /* Added padding to ensure cards are not cut off */
+  }
+  
+  .home-card {
+    background: #e8f5e9;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    min-height: 150px; /* Ensured minimum height to prevent hiding content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .home-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .home-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2e7d32;
+    margin-bottom: 0.5rem;
+  }
+  
+  .home-card-text {
+    color: #555;
+    font-size: 1.1rem;
+  }
+  
+  .home-button {
+    background: #4b5bd9;
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+    margin-top: 2rem;
+  }
+  
+  .home-button:hover {
+    background: #8e44ad;
+  }
+  
+  /* Login/Signup Page Styles */
+  .auth-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  .auth-container {
+    background: #fff3e0;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .auth-title {
+    font-size: 1.8rem;
+    color: #ef6c00;
+    margin-bottom: 1.5rem;
+  }
+  
+  .auth-form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .auth-label {
+    display: block;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  .auth-input {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .auth-button {
+    width: 100%;
+    background: #4b5bd9;
+    color: white;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+  }
+  
+  .auth-button:hover {
+    background: #8e44ad;
+  }
+  
+  .auth-link {
+    color: #4b5bd9;
+    text-decoration: none;
+  }
+  
+  .auth-link:hover {
+    text-decoration: underline;
+  }
+  
+  .auth-text {
+    margin-top: 1rem;
+    color: #666;
+  }
+  
+  /* Employee Dashboard Styles */
+  .employee-dashboard {
+    padding: 2rem;
+  }
+  
+  .employee-title {
+    font-size: 2.2rem;
+    color: #2e7d32;
+    margin-bottom: 1.5rem;
+  }
+  
+  .employee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .employee-card {
+    background: #fffde7;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .employee-card-title {
+    font-size: 1.4rem;
+    color: #f9a825;
+    margin-bottom: 1rem;
+  }
+  
+  .employee-score {
+    font-size: 2.5rem;
+    color: #f4511e;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .employee-risk {
+    color: #666;
+    text-align: center;
+  }
+  
+  .employee-nudge {
+    background: #eceff1;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+  
+  .employee-nudge-buttons {
+    margin-top: 0.5rem;
+  }
+  
+  .employee-nudge-button {
+    color: #4b5bd9;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 1rem;
+  }
+  
+  .employee-nudge-button:hover {
+    text-decoration: underline;
+  }
+  
+  .employee-chart {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  /* HR Dashboard Styles */
+  .hr-dashboard {
+    padding: 2rem;
+  }
+  
+  .hr-title {
+    font-size: 2.2rem;
+    color: #ab47bc;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .hr-card {
+    background: #fce4ec;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hr-card-title {
+    font-size: 1.4rem;
+    color: #880e4f;
+    margin-bottom: 1rem;
+  }
+  
+  .hr-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+  }
+  
+  .hr-table th, .hr-table td {
+    padding: 0.7rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .hr-table th {
+    background: #f8bbd0;
+    color: #880e4f;
+  }
+  
+  .hr-action {
+    background: #eceff1;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+  
+  .hr-action-button {
+    color: #4b5bd9;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .hr-action-button:hover {
+    text-decoration: underline;
+  }
+  
+  .hr-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
