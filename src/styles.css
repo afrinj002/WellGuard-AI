@@ -372,7 +372,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     height: auto;
     min-height: 400px; /* Reduced from 500px to fit content */
-    width: 350px;
+    width: 300px;
   }
   
   .employee-card-title {
