@@ -344,3 +344,117 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+
+/* ... (previous styles remain unchanged) ... */
+
+/* Employee Dashboard Styles */
+.employee-dashboard {
+    padding: 2rem;
+  }
+  
+  .employee-title {
+    font-size: 2.2rem;
+    color: #2e7d32;
+    margin-bottom: 1.5rem;
+  }
+  
+  .employee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .employee-card {
+    background: #fffde7;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: auto;
+    min-height: 400px; /* Reduced from 500px to fit content */
+  }
+  
+  .employee-card-title {
+    font-size: 1.4rem;
+    color: #f9a825;
+    margin-bottom: 1rem;
+  }
+  
+  .employee-gauge {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    max-width: 200px; /* Reduced from 300px */
+    margin: 0 auto;
+  }
+  
+  .employee-score {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.3rem; /* Reduced from 2.5rem */
+    color: #f4511e;
+    z-index: 1;
+  }
+  
+  .employee-risk {
+    color: #666;
+    text-align: center;
+    margin-top: 0rem;
+    font-size: 0.9rem; /* Reduced font size */
+  }
+  
+  .employee-suggestion {
+    color: #666;
+    text-align: center;
+    margin-top: 0rem;
+    font-style: italic;
+    font-size: 0.9rem; /* Reduced font size */
+  }
+  
+  .employee-timing {
+    color: #666;
+    text-align: center;
+    margin-top: 0rem;
+    font-size: 0.9rem; /* Reduced font size */
+  }
+  
+  .employee-mood-graph {
+    margin-top: 1rem; /* Reduced from 2rem */
+    width: 100%;
+    max-width: 200px; /* Reduced from 300px */
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px; /* Reduced from 150px */
+  }
+  
+  .employee-nudge {
+    background: #eceff1;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+  
+  .employee-nudge-buttons {
+    margin-top: 0.5rem;
+  }
+  
+  .employee-nudge-button {
+    color: #4b5bd9;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 1rem;
+  }
+  
+  .employee-nudge-button:hover {
+    text-decoration: underline;
+  }
+  
+  .employee-chart {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  /* ... (rest of the styles remain unchanged) ... */

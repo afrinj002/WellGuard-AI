@@ -5,6 +5,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import EmployeeDashboard from './components/EmployeeDashboard';
 import HRDashboard from './components/HRDashboard';
+import Consent from './components/Consent';
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -12,7 +13,9 @@ const App = () => {
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
-        return <Home />;
+        return <Home setCurrentPage={setCurrentPage} />;
+      case 'consent':
+        return <Consent onAgree={() => setCurrentPage('login')} />;
       case 'login':
         return <Login />;
       case 'signup':
@@ -22,7 +25,7 @@ const App = () => {
       case 'hr':
         return <HRDashboard />;
       default:
-        return <Home />;
+        return <Home setCurrentPage={setCurrentPage} />;
     }
   };
 

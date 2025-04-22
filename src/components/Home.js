@@ -1,8 +1,11 @@
 import React from 'react';
 
-const Home = () => (
+const Home = ({ setCurrentPage }) => (
   <div className="home">
-    <h1 className="home-title">Welcome to WellGuard AI</h1>
+    <header className="home-header">
+      <img src="https://via.placeholder.com/150x50.png?text=WellGuard+AI+Logo" alt="WellGuard AI Logo" className="home-logo" />
+      <h1 className="home-title">Welcome to WellGuard AI</h1>
+    </header>
     <p className="home-description">
       WellGuard AI proactively detects and mitigates employee burnout by analyzing behavioral signals from workplace tools. Empower your workforce with personalized nudges and real-time HR insights.
     </p>
@@ -20,7 +23,9 @@ const Home = () => (
         <p className="home-card-text">Reduce attrition and boost productivity with actionable insights.</p>
       </div>
     </div>
-    <button className="home-button">Get Started</button>
+    <button className="home-button" onClick={() => setCurrentPage('consent')}>
+      Get Started
+    </button>
   </div>
 );
 
