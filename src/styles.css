@@ -231,12 +231,6 @@
     margin-bottom: 1.5rem;
   }
   
-  .employee-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-  
   .employee-card {
     background: #fffde7;
     padding: 1.5rem;
@@ -380,7 +374,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-template-columns: repeat(3, 350px);
-    gap: 1.5rem;
+    gap: 0rem;
   }
   
   .employee-card {
@@ -695,10 +689,16 @@
     color: #1976d2;
   }
   
-  /* ... (rest of the styles remain unchanged) ... */
-
   .settings-page {
     display: flex;
+    position: relative;
+  }
+  
+  .settings-main-content {
+    margin-left: 100px;
+    padding: 2rem;
+    min-height: 100vh;
+    width: calc(100% - 250px);
   }
   
   .settings-title {
@@ -715,6 +715,35 @@
     width: 100%;
   }
   
+  .settings-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .settings-tab {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+  }
+  
+  .settings-tab.active {
+    background: #6a1b9a;
+    color: white;
+  }
+  
+  .settings-tab:hover:not(.active) {
+    background: #d0d0d0;
+  }
+  
+  .settings-content {
+    padding: 1rem;
+  }
+  
   .settings-section {
     margin-bottom: 2rem;
   }
@@ -722,7 +751,22 @@
   .settings-section-title {
     font-size: 1.4rem;
     color: #6a1b9a;
+    margin-bottom: 0.5rem;
+  }
+  
+  .settings-description {
+    font-size: 0.9rem;
+    color: #666;
     margin-bottom: 1rem;
+  }
+  
+  .settings-link {
+    color: #1ce3c6;
+    text-decoration: none;
+  }
+  
+  .settings-link:hover {
+    text-decoration: underline;
   }
   
   .settings-field {
@@ -744,20 +788,25 @@
     font-size: 0.9rem;
   }
   
-  .settings-option {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
+  .settings-textarea {
+    height: 100px;
+    resize: vertical;
   }
   
-  .settings-option input {
-    margin: 0;
+  .settings-submit {
+    background: #4caf50;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+    margin-top: 0.5rem;
   }
   
-  .settings-option label {
-    font-size: 0.9rem;
-    color: #333;
+  .settings-submit:hover {
+    background: #45a049;
   }
   
   .settings-logout {
@@ -769,14 +818,260 @@
     cursor: pointer;
     font-size: 1rem;
     transition: background 0.3s;
+    margin-top: 0.5rem;
   }
   
   .settings-logout:hover {
     background: #e53935;
   }
-  .settings-main-content {
-    margin-left: 50px;
+  
+  /* Popup Styles */
+  .settings-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .settings-popup-content {
+    background: #fff;
     padding: 2rem;
-    min-height: 100vh;
-    width: calc(100% - 250px);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .settings-popup-title {
+    font-size: 1.5rem;
+    color: #6a1b9a;
+    margin-bottom: 1rem;
+  }
+  
+  .settings-popup-text {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+  
+  .settings-popup-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .settings-popup-confirm {
+    background: #ef5350;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+  }
+  
+  .settings-popup-confirm:hover {
+    background: #e53935;
+  }
+  
+  .settings-popup-cancel {
+    background: #ddd;
+    color: #333;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+  }
+  
+  .settings-popup-cancel:hover {
+    background: #ccc;
+  }
+  .update-profile-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .settings-field {
+    margin-bottom: 1.5rem;
+  }
+  
+  .settings-field label {
+    display: block;
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .settings-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border-color 0.3s;
+  }
+  
+  .settings-input:focus {
+    border-color: #6a1b9a;
+    outline: none;
+    box-shadow: 0 0 5px rgba(106, 27, 154, 0.2);
+  }
+  
+  .settings-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .settings-option input[type="checkbox"],
+  .settings-option input[type="radio"] {
+    margin: 0;
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .settings-option label {
+    font-size: 0.95rem;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .settings-submit {
+    background: #4caf50;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 1.5rem;
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  .settings-submit:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+  }
+  
+  .settings-link {
+    color: #487cf6;
+    text-decoration: none;
+  }
+  
+  .settings-link:hover {
+    text-decoration: underline;
+  }
+  
+  .settings-textarea {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  .settings-logout {
+    background: #ef5350;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 0.5rem;
+  }
+  
+  .settings-logout:hover {
+    background: #e53935;
+    transform: translateY(-2px);
+  }
+  
+  /* Popup Styles */
+  .settings-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .settings-popup-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .settings-popup-title {
+    font-size: 1.5rem;
+    color: #6a1b9a;
+    margin-bottom: 1rem;
+  }
+  
+  .settings-popup-text {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+  
+  .settings-popup-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .settings-popup-confirm {
+    background: #ef5350;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+  }
+  
+  .settings-popup-confirm:hover {
+    background: #e53935;
+  }
+  
+  .settings-popup-cancel {
+    background: #ddd;
+    color: #333;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+  }
+  
+  .settings-popup-cancel:hover {
+    background: #ccc;
+  }
+  
+  /* Home Page Styles (for reference, adjust as needed) */
+  .home {
+    text-align: center;
   }
