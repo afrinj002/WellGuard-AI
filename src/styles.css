@@ -24,10 +24,22 @@
   }
   
   .sidebar-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 2rem;
     text-align: center;
+  }
+  .sidebar-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .sidebar-logo-img {
+    width: 25px;
+    height: auto;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
   }
   
   .sidebar-menu button {
@@ -129,6 +141,11 @@
   .home-button:hover {
     background: #8e44ad;
   }
+  .home-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
   
   /* Login/Signup Page Styles */
   .auth-page {
@@ -191,6 +208,7 @@
   .auth-link {
     color: #4b5bd9;
     text-decoration: none;
+    border: none;
   }
   
   .auth-link:hover {
@@ -372,7 +390,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     height: auto;
     min-height: 400px; /* Reduced from 500px to fit content */
-    width: 200px;
+    width: 300px;
   }
   
   .employee-card-title {
@@ -755,4 +773,10 @@
   
   .settings-logout:hover {
     background: #e53935;
+  }
+  .settings-main-content {
+    margin-left: 50px;
+    padding: 2rem;
+    min-height: 100vh;
+    width: calc(100% - 250px);
   }

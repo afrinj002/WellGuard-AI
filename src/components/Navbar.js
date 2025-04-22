@@ -1,8 +1,12 @@
 import React from 'react';
+import logo from '../assets/logo.png';
 
 const Navbar = ({ currentPage, setCurrentPage }) => (
   <div className="sidebar">
-    <h2 className="sidebar-title">WellGuard AI</h2>
+    <div className="sidebar-logo">
+      <img src={logo} alt="WellGuard AI Logo" className="sidebar-logo-img" />
+      <h2 className="sidebar-title">WellGuard AI</h2>
+    </div>
     <div className="sidebar-menu">
       <button
         className={currentPage === 'home' ? 'active' : ''}

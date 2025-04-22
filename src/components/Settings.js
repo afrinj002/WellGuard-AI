@@ -3,7 +3,7 @@ import React from 'react';
 const Settings = () => {
   return (
     <div className="settings-page">
-      <div className="main-content">
+      <div className="settings-main-content">
         <h1 className="settings-title">Settings</h1>
         <div className="settings-container">
           <div className="settings-section">
@@ -55,7 +55,7 @@ const Settings = () => {
               <label htmlFor="user">User</label>
             </div>
           </div>
-          <button className="settings-logout">Logout</button>
+          <button className="settings-logout">Update</button>
         </div>
       </div>
     </div>

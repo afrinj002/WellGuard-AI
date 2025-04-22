@@ -1,9 +1,10 @@
 import React from 'react';
+import logo from '../assets/logo.png';
 
 const Home = ({ setCurrentPage }) => (
   <div className="home">
     <header className="home-header">
-      <img src="https://via.placeholder.com/150x50.png?text=WellGuard+AI+Logo" alt="WellGuard AI Logo" className="home-logo" />
+      <img src={logo} alt="WellGuard AI Logo" className="home-logo" />
       <h1 className="home-title">Welcome to WellGuard AI</h1>
     </header>
     <p className="home-description">

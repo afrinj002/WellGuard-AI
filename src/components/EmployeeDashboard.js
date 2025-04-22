@@ -127,7 +127,7 @@ const EmployeeDashboard = () => {
     <div className="employee-dashboard">
       <h1 className="employee-title">Welcome, {mockData.employee.name}</h1>
       <div className="employee-grid">
-        <div className="employee-card" style={{ width: '350px' }}>
+        <div className="employee-card">
           <h2 className="employee-card-title">Your Burnout Score</h2>
           <div className="employee-gauge">
             <canvas ref={gaugeRef} width="120" height="60"></canvas> {/* Smaller gauge */}
@@ -140,7 +140,7 @@ const EmployeeDashboard = () => {
             <canvas ref={moodGraphRef} width="120" height="60"></canvas> {/* Smaller graph */}
           </div>
         </div>
-        <div className="employee-card" style={{ width: '350px' }}>
+        <div className="employee-card">
           <h2 className="employee-card-title">Recent Nudges</h2>
           {mockData.employee.nudges.map(nudge => (
             <div key={nudge.id} className="employee-nudge">
@@ -152,7 +152,7 @@ const EmployeeDashboard = () => {
             </div>
           ))}
         </div>
-        <div className="employee-card" style={{ width: '350px' }}>
+        <div className="employee-card">
           <h2 className="employee-card-title">Burnout Trends</h2>
           <div className="employee-chart">
             <canvas ref={chartRef}></canvas>
